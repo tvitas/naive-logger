@@ -1,0 +1,24 @@
+{
+    "name": "tvitas/naive-logger",
+    "description": "Naive file logger",
+    "type": "package",
+    "license": "Public Domain",
+    "authors": [
+        {
+            "name": "tvitas",
+            "email": "vitalijus.trainys@gmail.com"
+        }
+    ],
+  
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "psr/log": "^1.1@dev"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "tvitas\\NaiveLogger\\": "src/"
+        }
+    }
+}
