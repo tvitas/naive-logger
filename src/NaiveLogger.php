@@ -19,11 +19,12 @@ class NaiveLogger extends AbstractLogger
             $logMsg = $this->interpolate($message, $context);
         }
         $logStr = $dateTime . ' ' . strtoupper($level) . ': ' . $logMsg . PHP_EOL;
-        $fileContent = $logStr;
         if (file_exists($this->logFile)) {
-            $fileContent = file_get_contents($this->logFile) . $logStr;
+            file_put_contents($this->logFile, $logStr, FILE_APPEND);
+        } else {
+            file_put_contents($this->logFile, $logStr);
         }
-        file_put_contents($this->logFile, $fileContent);
+
     }
 
     private function interpolate($message, array $context)
